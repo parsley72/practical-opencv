@@ -28,7 +28,7 @@ int main() {
 
     // Convert to gray
     Mat image_gray;
-    cvtColor(image_blurred, image_gray, CV_BGR2GRAY);
+    cvtColor(image_blurred, image_gray, COLOR_BGR2GRAY);
 
     // Gradients in X and Y directions
     Mat grad_x, grad_y;

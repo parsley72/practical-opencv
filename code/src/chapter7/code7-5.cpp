@@ -10,7 +10,7 @@ using namespace std;
 
 Mat frame_hsv, frame, mask;
 MatND hist; //2D histogram
-int conn = 4, val = 255, flags = conn + (val << 8) + CV_FLOODFILL_MASK_ONLY;
+int conn = 4, val = 255, flags = conn + (val << 8) + FLOODFILL_MASK_ONLY;
 
 bool selected = false;
 
@@ -61,7 +61,7 @@ int main() {
             cout << "Video over" << endl;
             break;
         }
-        cvtColor(frame, frame_hsv, CV_BGR2HSV);
+        cvtColor(frame, frame_hsv, COLOR_BGR2HSV);
 
         // backproject on the HSV image
         Mat frame_backprojected = Mat::zeros(frame.size(), CV_8UC1);        

@@ -10,10 +10,10 @@ using namespace std;
 int main() {
     VideoCapture capr(1), capl(2);
     //reduce frame size
-    capl.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
-    capl.set(CV_CAP_PROP_FRAME_WIDTH, 320);
-    capr.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
-    capr.set(CV_CAP_PROP_FRAME_WIDTH, 320);
+    capl.set(CAP_PROP_FRAME_HEIGHT, 240);
+    capl.set(CAP_PROP_FRAME_WIDTH, 320);
+    capr.set(CAP_PROP_FRAME_HEIGHT, 240);
+    capr.set(CAP_PROP_FRAME_WIDTH, 320);
 
     namedWindow("Left");
     namedWindow("Right");

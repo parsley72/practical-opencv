@@ -20,7 +20,7 @@ class objectCounter {
 
 objectCounter::objectCounter(Mat _image) {
     image = _image.clone();
-    cvtColor(image, gray, CV_BGR2GRAY);
+    cvtColor(image, gray, COLOR_BGR2GRAY);
     imshow("image", image);
 }
 
@@ -50,7 +50,7 @@ void objectCounter::get_markers() {
 
     vector<vector<Point> > c, contours;
     vector<Vec4i> heirarchy;
-    findContours(th_e, c, heirarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_NONE);
+    findContours(th_e, c, heirarchy, RETR_CCOMP, CHAIN_APPROX_NONE);
 
     // remove very small contours
     for(int idx = 0; idx >= 0; idx = heirarchy[idx][0])
@@ -93,7 +93,7 @@ int objectCounter::count_objects() {
         }
 
     // superimpose the watershed image with 50% transparence on the grayscale original image
-    Mat imgGray; cvtColor(gray, imgGray, CV_GRAY2BGR); 
+    Mat imgGray; cvtColor(gray, imgGray, COLOR_GRAY2BGR); 
     wshed = wshed*0.5 + imgGray*0.5;
     imshow("Segmentation", wshed);
 

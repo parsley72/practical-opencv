@@ -67,7 +67,7 @@ class ellipseFinder {
             // Edge detection and contour extraction
             Mat edges; Canny(img, edges, l_canny, h_canny);
             vector<vector<Point> > c;
-            findContours(edges, c, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
+            findContours(edges, c, RETR_LIST, CHAIN_APPROX_NONE);
             // Remove small spurious short contours
             for(int i = 0; i < c.size(); i++) {
                 bool is_closed = false;

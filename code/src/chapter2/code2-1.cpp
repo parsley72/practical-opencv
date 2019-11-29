@@ -8,7 +8,7 @@ using namespace cv;
 
 int main()
 {
-	Mat im = imread("image.jpg", CV_LOAD_IMAGE_COLOR);
+	Mat im = imread("image.jpg", IMREAD_COLOR);
 	namedWindow("Hello");
 	imshow("Hello", im);
 

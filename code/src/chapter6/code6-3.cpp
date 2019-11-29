@@ -15,10 +15,10 @@ int thresh = 100; // Accumulator threshold
 void on_trackbar(int, void *) { // Circles
     if(shape == 1) {
         Mat img_gray;
-        cvtColor(img, img_gray, CV_BGR2GRAY);
+        cvtColor(img, img_gray, COLOR_BGR2GRAY);
         // Find circles
         vector<Vec3f> circles;
-        HoughCircles(img_gray, circles, CV_HOUGH_GRADIENT, 1, 10, 200, thresh > 0 ? thresh : 1, 5);
+        HoughCircles(img_gray, circles, HOUGH_GRADIENT, 1, 10, 200, thresh > 0 ? thresh : 1, 5);
         // Draw circles
         Mat img_show = img.clone();
         for(int i = 0; i < circles.size(); i++) {

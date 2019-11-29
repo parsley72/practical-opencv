@@ -22,7 +22,7 @@ void on_trackbar(int pos, void *)
 	// Holds the image processed acording to value of slider
 	Mat img_converted;
 	// Convert color-spaces according to value of slider
-	if(pos > 0) cvtColor(img, img_converted, CV_BGR2GRAY);
+	if(pos > 0) cvtColor(img, img_converted, COLOR_BGR2GRAY);
 	else img_converted = img;
 
 	imshow("Trackbar app", img_converted);

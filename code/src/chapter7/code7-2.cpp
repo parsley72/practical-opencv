@@ -10,7 +10,7 @@ using namespace std;
 
 Mat frame_hsv, frame, mask;
 
-int low_diff = 10, high_diff = 10, conn = 4, val = 255, flags = conn + (val << 8) + CV_FLOODFILL_MASK_ONLY;
+int low_diff = 10, high_diff = 10, conn = 4, val = 255, flags = conn + (val << 8) + FLOODFILL_MASK_ONLY;
 double h_h = 0, l_h = 0, h_s = 0, l_s = 0;
 
 bool selected = false;
@@ -65,7 +65,7 @@ int main() {
             cout << "Video over" << endl;
             break;
         }
-        cvtColor(frame, frame_hsv, CV_BGR2HSV);
+        cvtColor(frame, frame_hsv, COLOR_BGR2HSV);
         
         // extract the hue and saturation channels
         int from_to[] = {0,0, 1,1};

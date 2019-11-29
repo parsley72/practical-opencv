@@ -18,10 +18,10 @@ int main()
 	}
 
 	// Get size of frames
-	Size S = Size((int) cap.get(CV_CAP_PROP_FRAME_WIDTH), (int) cap.get(CV_CAP_PROP_FRAME_HEIGHT));
+	Size S = Size((int) cap.get(CAP_PROP_FRAME_WIDTH), (int) cap.get(CAP_PROP_FRAME_HEIGHT));
 	
 	// Make a video writer object and initialize it
-	VideoWriter put("output.mpg", CV_FOURCC('M','P','E','G'), 30, S);
+	VideoWriter put("output.mpg", VideoWriter::fourcc('M','P','E','G'), 30, S);
 	if(!put.isOpened())
 	{
 		cout << "File could not be created for writing. Check permissions" << endl;

@@ -37,7 +37,7 @@ void on_slider(int, void *) {
 
 int main() {
     image = imread("building.jpg");
-    cvtColor(image, image_gray, CV_BGR2GRAY);
+    cvtColor(image, image_gray, COLOR_BGR2GRAY);
 
     namedWindow("Corners");
 

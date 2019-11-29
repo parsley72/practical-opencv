@@ -25,9 +25,9 @@ int main() {
     Mat edges;
     Canny(img, edges, 50, 100);
 
-    findContours(edges, contours, heirarchy, CV_RETR_TREE, CV_CHAIN_APPROX_NONE);
+    findContours(edges, contours, heirarchy, RETR_TREE, CHAIN_APPROX_NONE);
 
-    namedWindow("Contours", CV_WINDOW_AUTOSIZE);
+    namedWindow("Contours", WINDOW_AUTOSIZE);
 
     createTrackbar("Levels", "Contours", &levels, 15, on_trackbar);
 

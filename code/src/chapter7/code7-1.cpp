@@ -78,7 +78,7 @@ int main()
                     
         cap >> frame;
 
-        cvtColor(frame, frame_hsv, CV_BGR2HSV);
+        cvtColor(frame, frame_hsv, COLOR_BGR2HSV);
 
         // Check if the video is over
         if(frame.empty())
